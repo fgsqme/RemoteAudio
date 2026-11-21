@@ -1,0 +1,16 @@
+[package]
+name = "remote-audio-server"
+version = "0.1.0"
+edition = "2021"
+description = "Capture audio from a Linux virtual sink and stream it to Android over TCP (Opus)"
+
+[dependencies]
+anyhow = "1"
+audiopus = "0.2"
+clap = { version = "4", features = ["derive"] }
+ctrlc = "3"
+# pulse-simple API 已拆分到独立 crate，版本与 libpulse-binding 保持同步
+libpulse-binding = "~2.28"
+libpulse-simple-binding = "~2.28"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
